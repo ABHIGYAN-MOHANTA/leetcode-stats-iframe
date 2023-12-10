@@ -7,7 +7,23 @@ function getRequest() {
       throw new Error("Network response was not ok.");
     })
     .then((data) => {
-      displayData(data); // Call a function to display data received
+      const importantData = {
+        totalSolved: data.totalSolved,
+        // totalQuestions: data.totalQuestions,
+        easySolved: data.easySolved,
+        // totalEasy: data.totalEasy,
+        mediumSolved: data.mediumSolved,
+        // totalMedium: data.totalMedium,
+        hardSolved: data.hardSolved,
+        // totalHard: data.totalHard,
+        acceptanceRate: data.acceptanceRate,
+        ranking: data.ranking,
+        // contributionPoints: data.contributionPoints,
+        // reputation: data.reputation,
+        // submissionCalendar: data.submissionCalendar,
+      };
+
+      displayData(importantData); // Call a function to display data received
     })
     .catch((error) => {
       console.error("Error:", error);
